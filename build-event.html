@@ -113,6 +113,23 @@
                 <p>&copy; 2026 The Final Detail. All rights reserved.</p>
             </footer>
             <script src="build-event.js" defer></script>
+
+            <script>
+                const selectedDecor = new URLSearchParams(window.location.search).getAll("decor");
+
+                if (selectedDecor.length > 0) {
+                    const decorCheckboxes = document.querySelectorAll(
+                        'input[type="checkbox"][name="decor"]'
+                    );
+
+                    for (const checkbox of decorCheckboxes) {
+                        checkbox.checked = selectedDecor.includes(checkbox.value);
+                    }
+                }
+            </script>
+</body>
+
+</html>
 </body>
 
 </html>
