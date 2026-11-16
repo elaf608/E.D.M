@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
       <a href="decor-options.html">Decor Options</a>
       <a href="gallery.html">Gallery</a>
       <a href="build-event.html">Build Your Event</a>
-      <a href="contact.html">About & Contact</a>
+      <a href="contact.html">About &amp; Contact</a>
     </nav>
   </header>
 
@@ -28,10 +27,34 @@
       <a class="btn" href="build-event.html">Request a Quotation</a>
     </section>
 
+    <section class="plan-by-occasion">
+      <h2>Plan by Occasion</h2>
+
+      <form action="build-event.html" method="get">
+        <label for="home-event-type">What are you celebrating?</label>
+        <select id="home-event-type" name="event" required>
+          <option value="">Choose an occasion</option>
+          <option value="bridal-shower">Bridal shower</option>
+          <option value="themed-party">Themed party</option>
+          <option value="birthday">Birthday</option>
+          <option value="engagement-party">Engagement party</option>
+          <option value="henna-night">Henna night</option>
+          <option value="baby-shower">Baby shower</option>
+          <option value="elegant-celebration">Elegant celebration</option>
+          <option value="ramadan-gathering">Ramadan gathering</option>
+          <option value="outdoor-winter-event">Outdoor winter event</option>
+        </select>
+
+        <button type="submit">Start Planning</button>
+      </form>
+
+      <p><a href="decor-options.html">Explore Décor Options</a></p>
+    </section>
+
     <section>
       <h2 class="section-title">Types of Events We Style</h2>
-      <div class="services">
 
+      <div class="services">
         <article class="card">
           <img src="images/bridal1.jpg" alt="Bridal shower decoration">
           <h3>Bridal Showers</h3>
@@ -94,7 +117,6 @@
           <p>Enjoy the winter season with cosy and beautiful outdoor celebrations.</p>
           <a href="services.html">Learn More</a>
         </article>
-
       </div>
     </section>
 
@@ -113,8 +135,8 @@
 
     <section id="past-events">
       <h2 class="section-title">Our Past Events</h2>
-      <div class="featured">
 
+      <div class="featured">
         <figure class="card">
           <img src="images/bridal1.jpg" alt="Bridal shower table with white flowers">
           <figcaption>Bridal Shower Bliss</figcaption>
@@ -129,8 +151,14 @@
           <img src="images/henna1.jpg" alt="Henna night decoration">
           <figcaption>Henna Night</figcaption>
         </figure>
-
       </div>
+
+      <div id="featured-controls" hidden>
+        <button type="button" id="featured-prev">Previous</button>
+        <span id="featured-count" role="status"></span>
+        <button type="button" id="featured-next">Next</button>
+      </div>
+
       <p class="center"><a class="btn" href="gallery.html">View Full Gallery</a></p>
     </section>
 
@@ -182,5 +210,4 @@
 
   <script src="home.js" defer></script>
 </body>
-
 </html>

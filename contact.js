@@ -22,3 +22,14 @@ contactForm.addEventListener("input", () => {
 });
 
 submitButton.disabled = false;
+
+const messageField = document.querySelector("#message");
+const messageCount = document.querySelector("#message-count");
+
+function updateMessageCount() {
+  const count = messageField.value.length;
+  messageCount.textContent = `${count} ${count === 1 ? "character" : "characters"}`;
+}
+
+messageField.addEventListener("input", updateMessageCount);
+updateMessageCount();

@@ -37,3 +37,30 @@ checkButton.addEventListener("click", checkAvailability);
 checkDate.addEventListener("input", () => {
   result.textContent = "";
 });
+
+// Past Events carousel
+const photos = document.querySelectorAll("#past-events .featured figure");
+const controls = document.querySelector("#featured-controls");
+
+if (photos.length > 1 && controls) {
+  const previous = document.querySelector("#featured-prev");
+  const next = document.querySelector("#featured-next");
+  const count = document.querySelector("#featured-count");
+  let currentPhoto = 0;
+
+  function showPhoto(index) {
+    currentPhoto = (index + photos.length) % photos.length;
+
+    photos.forEach((photo, position) => {
+      photo.hidden = position !== currentPhoto;
+    });
+
+    count.textContent = `${currentPhoto + 1} of ${photos.length}`;
+  }
+
+  previous.addEventListener("click", () => showPhoto(currentPhoto - 1));
+  next.addEventListener("click", () => showPhoto(currentPhoto + 1));
+
+  showPhoto(0);
+  controls.hidden = false;
+}

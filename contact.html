@@ -25,27 +25,26 @@
     <section class="intro">
       <h1>About &amp; Contact</h1>
     </section>
-    
 
-   <section>
-  <h2>About The Final Detail</h2>
-  <p>We style bridal showers, themed parties, birthdays, engagement parties,
-    henna nights, baby showers, elegant celebrations, Ramadan gatherings,
-    and outdoor winter events.</p>
-  <p>Choose the décor that suits your celebration, from backdrops and draping
-    to dining table styling, candy stations, and food and drinks displays.</p>
-    <p><a href="gallery.html#past-events">See Past Events</a></p>
-</section>
+    <section>
+      <h2>About The Final Detail</h2>
+      <p>We style bridal showers, themed parties, birthdays, engagement parties,
+        henna nights, baby showers, elegant celebrations, Ramadan gatherings,
+        and outdoor winter events.</p>
+      <p>Choose the décor that suits your celebration, from backdrops and draping
+        to dining table styling, candy stations, and food and drinks displays.</p>
+      <p><a href="gallery.html#past-events">See Past Events</a></p>
+    </section>
 
     <section>
       <h2>Frequently Asked Questions</h2>
 
       <details>
-  <summary>What types of events do you style?</summary>
-  <p>We style bridal showers, themed parties, birthdays, engagement parties,
-    henna nights, baby showers, elegant celebrations, Ramadan gatherings,
-    and outdoor winter events.</p>
-</details>
+        <summary>What types of events do you style?</summary>
+        <p>We style bridal showers, themed parties, birthdays, engagement parties,
+          henna nights, baby showers, elegant celebrations, Ramadan gatherings,
+          and outdoor winter events.</p>
+      </details>
 
       <details>
         <summary>Can I customise my décor?</summary>
@@ -73,15 +72,17 @@
         <input type="email" id="email" name="email" required>
 
         <label for="subject">Subject</label>
-        <select id="subject" name="subject" required> 
-          <option value=""disabled selected hidden>Choose a subject</option> <!---->
+        <select id="subject" name="subject" required>
+          <option value="" disabled selected hidden>Choose a subject</option>
           <option value="decor">Décor enquiry</option>
           <option value="custom-event">Custom event enquiry</option>
           <option value="general">General question</option>
         </select>
 
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <textarea id="message" name="message" rows="5" required
+                  aria-describedby="message-count"></textarea>
+        <p id="message-count">0 characters</p>
 
         <button type="submit" disabled>Send Enquiry</button>
         <p id="form-feedback" role="status"></p>
@@ -94,13 +95,13 @@
     <p>Where every detail matters.</p>
     <p>Creating memorable occasions, one detail at a time.</p>
     <p>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="decor-options.html">Decor Options</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">About & Contact</a>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="decor-options.html">Decor Options</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">About &amp; Contact</a>
     </p>
     <p>&copy; 2026 The Final Detail. All rights reserved.</p>
-</footer>
+  </footer>
 </body>
 </html>

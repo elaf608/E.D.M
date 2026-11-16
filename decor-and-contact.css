@@ -256,3 +256,10 @@ footer a {
     font-size: 30px;
   }
 }
+
+#message-count {
+  margin: 0;
+  text-align: right;
+  font-size: 0.9rem;
+  color: #70181d;
+}

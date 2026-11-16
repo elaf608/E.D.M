@@ -422,3 +422,29 @@ body > footer a {
   margin: 0;
   font-size: 14px;
 }
+
+#past-events .featured {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#past-events .featured figure {
+  width: min(100%, 360px);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#featured-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+#past-events .featured figure[hidden],
+#featured-controls[hidden] {
+  display: none;
+}

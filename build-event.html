@@ -17,7 +17,7 @@
             <a href="decor-options.html">Decor Options</a>
             <a href="gallery.html">Gallery</a>
             <a href="build-event.html" aria-current="page">Build Your Event</a>
-            <a href="contact.html">About & Contact</a>
+            <a href="contact.html">About &amp; Contact</a>
         </nav>
     </header>
 
@@ -25,12 +25,15 @@
         <section class="intro">
             <h1>Build Your Event</h1>
             <p>Tell us about your event and we will prepare a quotation for you.</p>
+            <a class="btn" href="decor-options.html">Choose Décor Options</a>
+            <p>Browse the setups and click <strong>Build My Event</strong> to bring
+                your choices back here, or select your décor in the form below.</p>
         </section>
 
         <form class="build-form" id="build-form" method="post">
-
             <h3>Your Details</h3>
             <p id="decor-note"></p>
+
             <label for="name">Customer Name</label>
             <input type="text" id="name" name="name" required>
 
@@ -53,18 +56,44 @@
             <label for="number">Number of guests</label>
             <input type="number" id="number" name="number" min="1" max="500" required>
 
-            <h3>Optional Extras</h3>
+            <fieldset>
+                <legend>Your Décor</legend>
+                <div class="extras">
+                    <label>
+                        <input type="checkbox" name="decor" value="backdrops-draping">
+                        Backdrops &amp; Draping
+                    </label>
+                    <label>
+                        <input type="checkbox" name="decor" value="dining-table">
+                        Dining Table Styling
+                    </label>
+                    <label>
+                        <input type="checkbox" name="decor" value="candy-station">
+                        Candy Station
+                    </label>
+                    <label>
+                        <input type="checkbox" name="decor" value="food-table">
+                        Food Table
+                    </label>
+                    <label>
+                        <input type="checkbox" name="decor" value="drinks-table">
+                        Drinks Table
+                    </label>
+                </div>
+            </fieldset>
 
+            <h3>Optional Extras</h3>
             <div class="extras">
                 <label for="Cake">
                     <input type="checkbox" id="Cake" name="Cake" value="Cake"> Cake
                 </label>
                 <label for="Photography">
-                    <input type="checkbox" id="Photography" name="Photography" value="Photography"> Photography
+                    <input type="checkbox" id="Photography" name="Photography"
+                           value="Photography"> Photography
                 </label>
                 <label for="Extra-decorations">
-                    <input type="checkbox" id="Extra-decorations" name="Extra-decorations" value="Extra-decorations">
-                    Extra decorations
+                    <input type="checkbox" id="Extra-decorations" name="Extra-decorations"
+                           value="Extra-decorations"> Extra decorations
                 </label>
             </div>
 
@@ -83,13 +112,6 @@
             <label for="requests">Additional requests</label>
             <textarea id="requests" name="requests" rows="3"></textarea>
 
-            <!--<div class="form-buttons">
-        <button type="button">Request a Quotation</button>
-        <button type="reset">Reset</button>
-      </div>
-    </form>
-  </main>-->
-
             <div class="form-buttons">
                 <button type="button" id="estimate-button">Calculate Estimate</button>
                 <button type="submit">Request a Quotation</button>
@@ -98,38 +120,36 @@
 
             <div id="estimate-result" role="status"></div>
             <p id="form-feedback" role="status"></p>
+        </form>
+    </main>
 
-            <footer>
-                <h2>The Final Detail</h2>
-                <p>Where every detail matters.</p>
-                <p>Creating memorable occasions, one detail at a time.</p>
-                <p>
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="decor-options.html">Decor Options</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="contact.html">About & Contact</a>
-                </p>
-                <p>&copy; 2026 The Final Detail. All rights reserved.</p>
-            </footer>
-            <script src="build-event.js" defer></script>
+    <footer>
+        <h2>The Final Detail</h2>
+        <p>Where every detail matters.</p>
+        <p>Creating memorable occasions, one detail at a time.</p>
+        <p>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="decor-options.html">Decor Options</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">About &amp; Contact</a>
+        </p>
+        <p>&copy; 2026 The Final Detail. All rights reserved.</p>
+    </footer>
 
-            <script>
-                const selectedDecor = new URLSearchParams(window.location.search).getAll("decor");
+    <script>
+        {
+            const selectedDecor = new URLSearchParams(window.location.search).getAll("decor");
+            const decorCheckboxes = document.querySelectorAll(
+                '#build-form input[type="checkbox"][name="decor"]'
+            );
 
-                if (selectedDecor.length > 0) {
-                    const decorCheckboxes = document.querySelectorAll(
-                        'input[type="checkbox"][name="decor"]'
-                    );
-
-                    for (const checkbox of decorCheckboxes) {
-                        checkbox.checked = selectedDecor.includes(checkbox.value);
-                    }
-                }
-            </script>
-</body>
-
-</html>
+            for (const checkbox of decorCheckboxes) {
+                checkbox.checked = selectedDecor.includes(checkbox.value);
+            }
+        }
+    </script>
+    <script src="build-event.js" defer></script>
 </body>
 
 </html>
