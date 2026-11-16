@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | The Final Detail</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #fdebf0;
+    color: #70181d;
+    font-family: Georgia, serif;
+    line-height: 1.7;
+}
+
+header {
+    background: white;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 25px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: #70181d;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 5%;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.intro h1 {
+    font-size: 38px;
+}
+
+.intro p {
+    max-width: 750px;
+    margin: auto;
+}
+
+.filters {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.filters button {
+    background: #70181d;
+    color: white;
+    border: 2px solid #70181d;
+    padding: 10px 16px;
+    border-radius: 25px;
+    margin: 5px;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+.filters button:hover,
+.filters button.active {
+    background: white;
+    color: #70181d;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+figure {
+    background: white;
+    padding: 12px;
+    margin: 0;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(112,24,29,0.10);
+    transition: transform 0.3s;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+}
+
+figure img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 5px;
+}
+
+.quote-section {
+    text-align: center;
+    background: #f3dce2;
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin-top: 45px;
+}
+
+.quote-button {
+    display: inline-block;
+    background: #70181d;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+footer {
+    background: #70181d;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 7px;
+}
+
+@media (max-width: 850px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 550px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .intro h1 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h2>The Final Detail</h2>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="decor-options.html">Decor Options</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="build-event.html">Build Your Event</a>
+        <a href="contact.html">About & Contact</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="intro">
+    <h1>Our Event Gallery</h1>
+    <p>
+        Every event tells a story. Explore our collection
+        of event inspirations and celebrations. Discover
+        beautiful arrangements and get inspired for
+        your next special occasion.
+    </p>
+</section>
+
+<section class="filters">
+    <h2>Explore Our Events</h2>
+
+    <button class="active" data-filter="all">All</button>
+    <button data-filter="bridal-showers">Bridal Showers</button>
+    <button data-filter="themed-parties">Themed Parties</button>
+    <button data-filter="birthdays">Birthdays</button>
+    <button data-filter="engagement-parties">Engagement Parties</button>
+    <button data-filter="henna-nights">Henna Nights</button>
+    <button data-filter="baby-showers">Baby Showers</button>
+    <button data-filter="classy-events">Classy Events</button>
+    <button data-filter="ramadan-gatherings">Ramadan Gatherings</button>
+    <button data-filter="winter-outdoor-events">Winter Outdoor Events</button>
+</section>
+
+<section class="gallery-grid">
+
+    <figure data-category="bridal-showers">
+        <img src="images/bridal1.jpg" alt="Bridal shower decorations">
+        <figcaption>Bridal Showers</figcaption>
+    </figure>
+
+    <figure data-category="themed-parties">
+        <img src="images/themed-party1.jpg" alt="Themed party decorations">
+        <figcaption>Themed Parties</figcaption>
+    </figure>
+
+    <figure data-category="birthdays">
+        <img src="images/birthday1.jpg" alt="Birthday celebration">
+        <figcaption>Birthdays</figcaption>
+    </figure>
+
+    <figure data-category="engagement-parties">
+        <img src="images/engagement1.jpg" alt="Engagement party">
+        <figcaption>Engagement Parties</figcaption>
+    </figure>
+
+    <figure data-category="henna-nights">
+        <img src="images/henna1.jpg" alt="Henna night decoration">
+        <figcaption>Henna Nights</figcaption>
+    </figure>
+
+    <figure data-category="baby-showers">
+        <img src="images/babyshower1.jpg" alt="Baby shower setup">
+        <figcaption>Baby Showers</figcaption>
+    </figure>
+
+    <figure data-category="classy-events">
+        <img src="images/classyevent1.jpg" alt="Classy event setup">
+        <figcaption>Classy Events</figcaption>
+    </figure>
+
+    <figure data-category="ramadan-gatherings">
+        <img src="images/ramadan1.jpg" alt="Ramadan gathering">
+        <figcaption>Ramadan Gatherings</figcaption>
+    </figure>
+
+    <figure data-category="winter-outdoor-events">
+        <img src="images/winter1.jpg" alt="Winter outdoor event">
+        <figcaption>Winter Outdoor Events</figcaption>
+    </figure>
+
+</section>
+
+<section class="quote-section">
+    <h2>Your Event Could Be Next</h2>
+    <p>Let us create a beautiful and personalised celebration for your special occasion.</p>
+    <a class="quote-button" href="build-event.html">Request a Quotation</a>
+</section>
+
+</main>
+
+<footer>
+    <h2>The Final Detail</h2>
+    <p>Where every detail matters.</p>
+    <p>Creating memorable occasions, one detail at a time.</p>
+    <p>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="decor-options.html">Decor Options</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">About & Contact</a>
+    </p>
+    <p>&copy; 2026 The Final Detail. All rights reserved.</p>
+</footer>
+
+<script>
+const filterButtons = document.querySelectorAll(".filters button");
+const galleryItems = document.querySelectorAll(".gallery-grid figure");
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        const selectedCategory = button.dataset.filter;
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        galleryItems.forEach(item => {
+            if (
+                selectedCategory === "all" ||
+                item.dataset.category === selectedCategory
+            ) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

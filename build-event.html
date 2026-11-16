@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Event | The Final Detail</title>
+    <link rel="stylesheet" href="home-build.css">
+</head>
+
+<body>
+    <header>
+        <h2>The Final Detail</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="decor-options.html">Decor Options</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="build-event.html" aria-current="page">Build Your Event</a>
+            <a href="contact.html">About & Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Build Your Event</h1>
+            <p>Tell us about your event and we will prepare a quotation for you.</p>
+        </section>
+
+        <form class="build-form" id="build-form" method="post">
+
+            <h3>Your Details</h3>
+            <p id="decor-note"></p>
+            <label for="name">Customer Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="type">Event Type</label>
+            <select id="type" name="type">
+                <option value="bridal-shower">Bridal Shower</option>
+                <option value="themed-party">Themed Party</option>
+                <option value="birthday">Birthday</option>
+                <option value="engagement">Engagement Party</option>
+                <option value="henna-night">Henna Night</option>
+                <option value="baby-shower">Baby Shower</option>
+                <option value="classy-event">Classy Event</option>
+                <option value="ramadan-gathering">Ramadan Gathering</option>
+                <option value="winter-outdoor">Winter Outdoor Event</option>
+            </select>
+
+            <label for="date">Preferred Event Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="number">Number of guests</label>
+            <input type="number" id="number" name="number" min="1" max="500" required>
+
+            <h3>Optional Extras</h3>
+
+            <div class="extras">
+                <label for="Cake">
+                    <input type="checkbox" id="Cake" name="Cake" value="Cake"> Cake
+                </label>
+                <label for="Photography">
+                    <input type="checkbox" id="Photography" name="Photography" value="Photography"> Photography
+                </label>
+                <label for="Extra-decorations">
+                    <input type="checkbox" id="Extra-decorations" name="Extra-decorations" value="Extra-decorations">
+                    Extra decorations
+                </label>
+            </div>
+
+            <label for="color">Color theme</label>
+            <select id="color" name="color">
+                <option>Pink</option>
+                <option>Blue</option>
+                <option>Red</option>
+                <option>Green</option>
+                <option>Purple</option>
+                <option>White</option>
+                <option>Gold</option>
+                <option>Custom (write it in the requests)</option>
+            </select>
+
+            <label for="requests">Additional requests</label>
+            <textarea id="requests" name="requests" rows="3"></textarea>
+
+            <!--<div class="form-buttons">
+        <button type="button">Request a Quotation</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </main>-->
+
+            <div class="form-buttons">
+                <button type="button" id="estimate-button">Calculate Estimate</button>
+                <button type="submit">Request a Quotation</button>
+                <button type="reset">Reset</button>
+            </div>
+
+            <div id="estimate-result" role="status"></div>
+            <p id="form-feedback" role="status"></p>
+
+            <footer>
+                <h2>The Final Detail</h2>
+                <p>Where every detail matters.</p>
+                <p>Creating memorable occasions, one detail at a time.</p>
+                <p>
+                    <a href="index.html">Home</a>
+                    <a href="services.html">Services</a>
+                    <a href="decor-options.html">Decor Options</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">About & Contact</a>
+                </p>
+                <p>&copy; 2026 The Final Detail. All rights reserved.</p>
+            </footer>
+            <script src="build-event.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &amp; Contact | The Final Detail</title>
+  <link rel="stylesheet" href="decor-and-contact.css">
+  <script src="contact.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h2>The Final Detail</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="decor-options.html">Décor Options</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="build-event.html">Build Your Event</a>
+      <a href="contact.html" aria-current="page">About &amp; Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>About &amp; Contact</h1>
+    </section>
+    
+
+   <section>
+  <h2>About The Final Detail</h2>
+  <p>We style bridal showers, themed parties, birthdays, engagement parties,
+    henna nights, baby showers, elegant celebrations, Ramadan gatherings,
+    and outdoor winter events.</p>
+  <p>Choose the décor that suits your celebration, from backdrops and draping
+    to dining table styling, candy stations, and food and drinks displays.</p>
+    <p><a href="gallery.html#past-events">See Past Events</a></p>
+</section>
+
+    <section>
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+  <summary>What types of events do you style?</summary>
+  <p>We style bridal showers, themed parties, birthdays, engagement parties,
+    henna nights, baby showers, elegant celebrations, Ramadan gatherings,
+    and outdoor winter events.</p>
+</details>
+
+      <details>
+        <summary>Can I customise my décor?</summary>
+        <p>Yes. Explore our <a href="decor-options.html">Décor Options</a>
+          and choose the setups you’d like for your celebration.</p>
+      </details>
+
+      <details>
+        <summary>How is my estimate calculated?</summary>
+        <p>Your estimate depends on your décor choices and event details,
+          such as the number of guests. You can explore your choices on
+          <a href="build-event.html">Build Your Event</a>.</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>Contact Us</h2>
+      <p>This is a demo enquiry form.</p>
+
+      <form id="contact-form">
+        <label for="full-name">Full name</label>
+        <input type="text" id="full-name" name="full-name" required>
+
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject</label>
+        <select id="subject" name="subject" required> 
+          <option value=""disabled selected hidden>Choose a subject</option> <!---->
+          <option value="decor">Décor enquiry</option>
+          <option value="custom-event">Custom event enquiry</option>
+          <option value="general">General question</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" disabled>Send Enquiry</button>
+        <p id="form-feedback" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <h2>The Final Detail</h2>
+    <p>Where every detail matters.</p>
+    <p>Creating memorable occasions, one detail at a time.</p>
+    <p>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="decor-options.html">Decor Options</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">About & Contact</a>
+    </p>
+    <p>&copy; 2026 The Final Detail. All rights reserved.</p>
+</footer>
+</body>
+</html>
