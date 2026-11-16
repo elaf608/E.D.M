@@ -1,389 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | The Final Detail</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | The Final Detail</title>
 
-<style>
-* {
-    box-sizing: border-box;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-body {
-    margin: 0;
-    background: #fdebf0;
-    color: #70181d;
-    font-family: Georgia, serif;
-    line-height: 1.7;
-}
+        body {
+            margin: 0;
+            background: #fdebf0;
+            color: #70181d;
+            font-family: Georgia, serif;
+            line-height: 1.7;
+        }
 
-header {
-    background: white;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-}
+        header {
+            background: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
 
-header h2 {
-    margin: 0;
-    font-size: 25px;
-}
+        header h2 {
+            margin: 0;
+            font-size: 25px;
+        }
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-}
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
 
-nav a {
-    color: #70181d;
-    text-decoration: none;
-    font-size: 14px;
-}
+        nav a {
+            color: #70181d;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-nav a:hover,
-nav a[aria-current="page"] {
-    text-decoration: underline;
-    font-weight: bold;
-}
+        nav a:hover,
+        nav a[aria-current="page"] {
+            text-decoration: underline;
+            font-weight: bold;
+        }
 
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 45px 5%;
-}
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 5%;
+        }
 
-.intro {
-    text-align: center;
-    margin-bottom: 40px;
-}
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-.intro h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-}
+        .intro h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
 
-.intro p {
-    max-width: 750px;
-    margin: auto;
-}
+        .intro p {
+            max-width: 750px;
+            margin: auto;
+        }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-.service-card {
-    background: white;
-    padding: 16px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(112,24,29,0.10);
-    transition: transform 0.3s;
-}
+        .service-card {
+            background: white;
+            padding: 16px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(112, 24, 29, 0.10);
+            transition: transform 0.3s;
+        }
 
-.service-card:hover {
-    transform: translateY(-5px);
-}
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
 
-.service-card img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+        .service-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
 
-.service-card h2 {
-    font-size: 21px;
-    margin: 12px 0 5px;
-}
+        .service-card h2 {
+            font-size: 21px;
+            margin: 12px 0 5px;
+        }
 
-.service-card p,
-.service-card ul {
-    font-size: 14px;
-}
+        .service-card p,
+        .service-card ul {
+            font-size: 14px;
+        }
 
-.service-card ul {
-    padding-left: 20px;
-}
+        .service-card ul {
+            padding-left: 20px;
+        }
 
-.card-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 15px;
-}
+        .card-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
 
-.card-links a,
-.quote-button {
-    display: inline-block;
-    background: #70181d;
-    color: white;
-    padding: 10px 13px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 13px;
-}
+        .card-links a,
+        .quote-button {
+            display: inline-block;
+            background: #70181d;
+            color: white;
+            padding: 10px 13px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 13px;
+        }
 
-.card-links a:hover,
-.quote-button:hover {
-    background: #92333d;
-}
+        .card-links a:hover,
+        .quote-button:hover {
+            background: #92333d;
+        }
 
-.quote-section {
-    text-align: center;
-    background: #f3dce2;
-    padding: 40px 20px;
-    border-radius: 15px;
-    margin-top: 50px;
-}
+        .quote-section {
+            text-align: center;
+            background: #f3dce2;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
 
-footer {
-    background: #70181d;
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
-    margin-top: 30px;
-}
+        footer {
+            background: #70181d;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 30px;
+        }
 
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 7px;
-}
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 7px;
+        }
 
-@media (max-width: 850px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+        @media (max-width: 850px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
 
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
 
-@media (max-width: 550px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
+        @media (max-width: 550px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
 
-    nav {
-        justify-content: center;
-        gap: 12px;
-    }
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
 
-    nav a {
-        font-size: 12px;
-    }
+            nav a {
+                font-size: 12px;
+            }
 
-    .intro h1 {
-        font-size: 30px;
-    }
-}
-</style>
+            .intro h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* DARK MODE BUTTON */
+
+        #theme-toggle {
+            background-color: #70181d;
+            color: #fdebf0;
+            border: 1px solid #70181d;
+            border-radius: 25px;
+            padding: 9px 15px;
+            font-family: Georgia, serif;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        #theme-toggle:hover {
+            opacity: 0.8;
+        }
+
+
+        /* DARK MODE COLOURS */
+
+        body.dark-mode {
+            background-color: #70181d;
+            color: #fdebf0;
+        }
+
+        /* Header */
+
+        body.dark-mode header {
+            background-color: #70181d;
+            color: #fdebf0;
+            border-bottom: 1px solid #fdebf0;
+        }
+
+        body.dark-mode header h2 {
+            color: #fdebf0;
+        }
+
+        /* Navigation */
+
+        body.dark-mode nav a {
+            color: #fdebf0;
+        }
+
+        /* Main headings and text */
+
+        body.dark-mode h1,
+        body.dark-mode h2,
+        body.dark-mode h3,
+        body.dark-mode p,
+        body.dark-mode li,
+        body.dark-mode figcaption {
+            color: #fdebf0;
+        }
+
+        /* Service and gallery cards */
+
+        body.dark-mode .service-card,
+        body.dark-mode figure,
+        body.dark-mode .decor-card,
+        body.dark-mode .decor-form {
+            background-color: #70181d;
+            color: #fdebf0;
+            border: 1px solid #fdebf0;
+        }
+
+        /* Images */
+
+        body.dark-mode img {
+            border: 1px solid #fdebf0;
+        }
+
+        /* Buttons */
+
+        body.dark-mode button {
+            background-color: #fdebf0;
+            color: #70181d;
+            border-color: #fdebf0;
+        }
+
+        body.dark-mode button:hover,
+        body.dark-mode .filters button.active {
+            background-color: #70181d;
+            color: #fdebf0;
+        }
+
+        /* Links and quotation buttons */
+
+        body.dark-mode a {
+            color: #fdebf0;
+        }
+
+        body.dark-mode .quote-button,
+        body.dark-mode .card-links a {
+            background-color: #fdebf0;
+            color: #70181d;
+        }
+
+        /* Special sections */
+
+        body.dark-mode .quote-section {
+            background-color: #70181d;
+            color: #fdebf0;
+            border: 1px solid #fdebf0;
+        }
+
+        /* Form fields */
+
+        body.dark-mode input,
+        body.dark-mode select,
+        body.dark-mode textarea {
+            background-color: #70181d;
+            color: #fdebf0;
+            border: 1px solid #fdebf0;
+        }
+
+        /* Footer */
+
+        body.dark-mode footer {
+            background-color: #70181d;
+            color: #fdebf0;
+            border-top: 1px solid #fdebf0;
+        }
+
+        body.dark-mode footer h2,
+        body.dark-mode footer p,
+        body.dark-mode footer a {
+            color: #fdebf0;
+        }
+
+        /* Dark mode toggle */
+
+        body.dark-mode #theme-toggle {
+            background-color: #fdebf0;
+            color: #70181d;
+            border-color: #fdebf0;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h2>The Final Detail</h2>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html" aria-current="page">Services</a>
-        <a href="decor-options.html">Decor Options</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="build-event.html">Build Your Event</a>
-        <a href="contact.html">About & Contact</a>
-    </nav>
-</header>
+    <header>
+        <h2>The Final Detail</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html" aria-current="page">Services</a>
+            <a href="decor-options.html">Decor Options</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="build-event.html">Build Your Event</a>
+            <a href="contact.html">About & Contact</a>
+            <!--<button id="theme-toggle" type="button">
+                🌙 Dark Mode
+            </button>-->
+        </nav>
+    </header>
 
-<main>
+    <main>
 
-<section class="intro">
-    <h1>Our Services</h1>
-    <p>
-        At The Final Detail, we believe every occasion deserves
-        to be celebrated beautifully. We create personalised
-        event setups designed around your ideas, preferences
-        and style. Every detail matters when creating
-        unforgettable memories.
-    </p>
-</section>
+        <section class="intro">
+            <h1>Our Services</h1>
+            <p>
+                At The Final Detail, we believe every occasion deserves
+                to be celebrated beautifully. We create personalised
+                event setups designed around your ideas, preferences
+                and style. Every detail matters when creating
+                unforgettable memories.
+            </p>
+        </section>
 
-<section class="services-grid">
+        <section class="services-grid">
 
-    <article class="service-card">
-        <img src="images/bridal1.jpg" alt="Bridal shower decoration">
-        <h2>Bridal Showers</h2>
-        <p>Celebrate the bride-to-be with beautiful and personalised arrangements.</p>
-        <ul>
-            <li>Bridal backdrops</li>
-            <li>Floral centrepieces</li>
-            <li>Elegant table styling</li>
-            <li>Personalised signs</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/bridal1.jpg" alt="Bridal shower decoration">
+                <h2>Bridal Showers</h2>
+                <p>Celebrate the bride-to-be with beautiful and personalised arrangements.</p>
+                <ul>
+                    <li>Bridal backdrops</li>
+                    <li>Floral centrepieces</li>
+                    <li>Elegant table styling</li>
+                    <li>Personalised signs</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/themed-party1.jpg" alt="Themed party decoration">
-        <h2>Themed Parties</h2>
-        <p>Bring your imagination to life with customised themes and creative decorations.</p>
-        <ul>
-            <li>Themed backdrops</li>
-            <li>Matching decorations</li>
-            <li>Personalised boards</li>
-            <li>Custom centrepieces</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/themed-party1.jpg" alt="Themed party decoration">
+                <h2>Themed Parties</h2>
+                <p>Bring your imagination to life with customised themes and creative decorations.</p>
+                <ul>
+                    <li>Themed backdrops</li>
+                    <li>Matching decorations</li>
+                    <li>Personalised boards</li>
+                    <li>Custom centrepieces</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/birthday1.jpg" alt="Birthday celebration">
-        <h2>Birthdays</h2>
-        <p>Make birthdays special with beautiful and memorable event setups.</p>
-        <ul>
-            <li>Birthday backdrops</li>
-            <li>Personalised signs</li>
-            <li>Cake tables</li>
-            <li>Decorative accessories</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/birthday1.jpg" alt="Birthday celebration">
+                <h2>Birthdays</h2>
+                <p>Make birthdays special with beautiful and memorable event setups.</p>
+                <ul>
+                    <li>Birthday backdrops</li>
+                    <li>Personalised signs</li>
+                    <li>Cake tables</li>
+                    <li>Decorative accessories</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/engagement1.jpg" alt="Engagement party decoration">
-        <h2>Engagement Parties</h2>
-        <p>Celebrate a special beginning with elegant and personalised decorations.</p>
-        <ul>
-            <li>Engagement backdrops</li>
-            <li>Floral arrangements</li>
-            <li>Dining table styling</li>
-            <li>Personalised signs</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/engagement1.jpg" alt="Engagement party decoration">
+                <h2>Engagement Parties</h2>
+                <p>Celebrate a special beginning with elegant and personalised decorations.</p>
+                <ul>
+                    <li>Engagement backdrops</li>
+                    <li>Floral arrangements</li>
+                    <li>Dining table styling</li>
+                    <li>Personalised signs</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/henna1.jpg" alt="Henna night decoration">
-        <h2>Henna Nights</h2>
-        <p>Beautiful traditional-inspired arrangements for a memorable celebration.</p>
-        <ul>
-            <li>Traditional backdrops</li>
-            <li>Decorative seating</li>
-            <li>Floral arrangements</li>
-            <li>Elegant table styling</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/henna1.jpg" alt="Henna night decoration">
+                <h2>Henna Nights</h2>
+                <p>Beautiful traditional-inspired arrangements for a memorable celebration.</p>
+                <ul>
+                    <li>Traditional backdrops</li>
+                    <li>Decorative seating</li>
+                    <li>Floral arrangements</li>
+                    <li>Elegant table styling</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/babyshower1.jpg" alt="Baby shower decoration">
-        <h2>Baby Showers</h2>
-        <p>Welcome a new arrival with sweet and personalised celebrations.</p>
-        <ul>
-            <li>Baby shower backdrops</li>
-            <li>Pastel decorations</li>
-            <li>Personalised signs</li>
-            <li>Dessert tables</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/babyshower1.jpg" alt="Baby shower decoration">
+                <h2>Baby Showers</h2>
+                <p>Welcome a new arrival with sweet and personalised celebrations.</p>
+                <ul>
+                    <li>Baby shower backdrops</li>
+                    <li>Pastel decorations</li>
+                    <li>Personalised signs</li>
+                    <li>Dessert tables</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/classyevent1.jpg" alt="Classy event decoration">
-        <h2>Classy Events</h2>
-        <p>Sophisticated and timeless event styling for those who appreciate elegance.</p>
-        <ul>
-            <li>Elegant table styling</li>
-            <li>Minimalist backdrops</li>
-            <li>Floral decorations</li>
-            <li>Luxury accessories</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/classyevent1.jpg" alt="Classy event decoration">
+                <h2>Classy Events</h2>
+                <p>Sophisticated and timeless event styling for those who appreciate elegance.</p>
+                <ul>
+                    <li>Elegant table styling</li>
+                    <li>Minimalist backdrops</li>
+                    <li>Floral decorations</li>
+                    <li>Luxury accessories</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/ramadan1.jpg" alt="Ramadan gathering decoration">
-        <h2>Ramadan Gatherings</h2>
-        <p>Beautiful and welcoming arrangements for special Ramadan gatherings.</p>
-        <ul>
-            <li>Ramadan decorations</li>
-            <li>Dining table arrangements</li>
-            <li>Decorative lanterns</li>
-            <li>Floral centrepieces</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/ramadan1.jpg" alt="Ramadan gathering decoration">
+                <h2>Ramadan Gatherings</h2>
+                <p>Beautiful and welcoming arrangements for special Ramadan gatherings.</p>
+                <ul>
+                    <li>Ramadan decorations</li>
+                    <li>Dining table arrangements</li>
+                    <li>Decorative lanterns</li>
+                    <li>Floral centrepieces</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-    <article class="service-card">
-        <img src="images/winter1.jpg" alt="Winter outdoor event decoration">
-        <h2>Winter Outdoor Events</h2>
-        <p>Enjoy the winter season with cosy and beautiful outdoor celebrations.</p>
-        <ul>
-            <li>Outdoor decorations</li>
-            <li>Cosy seating arrangements</li>
-            <li>Decorative lighting</li>
-            <li>Outdoor table styling</li>
-        </ul>
-        <div class="card-links">
-            <a href="decor-options.html">View Decor Options</a>
-            <a href="build-event.html">Request a Quote</a>
-        </div>
-    </article>
+            <article class="service-card">
+                <img src="images/winter1.jpg" alt="Winter outdoor event decoration">
+                <h2>Winter Outdoor Events</h2>
+                <p>Enjoy the winter season with cosy and beautiful outdoor celebrations.</p>
+                <ul>
+                    <li>Outdoor decorations</li>
+                    <li>Cosy seating arrangements</li>
+                    <li>Decorative lighting</li>
+                    <li>Outdoor table styling</li>
+                </ul>
+                <div class="card-links">
+                    <a href="decor-options.html">View Decor Options</a>
+                    <a href="build-event.html">Request a Quote</a>
+                </div>
+            </article>
 
-</section>
+        </section>
 
-<section class="quote-section">
-    <h2>Let's Plan Something Special</h2>
-    <p>Have an event in mind? Tell us your ideas and let us bring your vision to life.</p>
-    <a class="quote-button" href="build-event.html">Request a Quotation</a>
-</section>
+        <section class="quote-section">
+            <h2>Let's Plan Something Special</h2>
+            <p>Have an event in mind? Tell us your ideas and let us bring your vision to life.</p>
+            <a class="quote-button" href="build-event.html">Request a Quotation</a>
+        </section>
 
-</main>
+    </main>
 
-<footer>
-    <h2>The Final Detail</h2>
-    <p>Where every detail matters.</p>
-    <p>Creating memorable occasions, one detail at a time.</p>
-    <p>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="decor-options.html">Decor Options</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">About & Contact</a>
-    </p>
-    <p>&copy; 2026 The Final Detail. All rights reserved.</p>
-</footer>
+    <footer>
+        <h2>The Final Detail</h2>
+        <p>Where every detail matters.</p>
+        <p>Creating memorable occasions, one detail at a time.</p>
+        <p>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="decor-options.html">Decor Options</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">About & Contact</a>
+        </p>
+        <p>&copy; 2026 The Final Detail. All rights reserved.</p>
+    </footer>
 
 </body>
+
 </html>

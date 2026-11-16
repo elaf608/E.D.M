@@ -2,661 +2,772 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gallery | The Final Detail</title>
+    <title>Gallery | The Final Detail</title>
 
-<style>
+    <style>
+        /* GENERAL SETTINGS */
 
-/* GENERAL SETTINGS */
+        * {
+            box-sizing: border-box;
+        }
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    background-color: #fdebf0;
-    color: #70181d;
-    font-family: Georgia, 'Times New Roman', serif;
-    line-height: 1.7;
-}
-
-
-/* HEADER */
-
-header {
-    background-color: white;
-    padding: 20px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-header h2 {
-    margin: 0;
-    font-size: 25px;
-    color: #70181d;
-}
+        body {
+            margin: 0;
+            background-color: #fdebf0;
+            color: #70181d;
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.7;
+        }
 
 
-/* NAVIGATION */
+        /* HEADER */
 
-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-}
+        header {
+            background-color: white;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-nav a {
-    color: #70181d;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-nav a[aria-current="page"] {
-    font-weight: bold;
-    border-bottom: 2px solid #70181d;
-    padding-bottom: 5px;
-}
+        header h2 {
+            margin: 0;
+            font-size: 25px;
+            color: #70181d;
+        }
 
 
-/* MAIN CONTENT */
+        /* NAVIGATION */
 
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 45px 5%;
-}
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
 
+        nav a {
+            color: #70181d;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-/* INTRODUCTION */
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-.intro {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.intro h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-}
-
-.intro p {
-    max-width: 750px;
-    margin: auto;
-    font-size: 16px;
-}
+        nav a[aria-current="page"] {
+            font-weight: bold;
+            border-bottom: 2px solid #70181d;
+            padding-bottom: 5px;
+        }
 
 
-/* GALLERY FILTERS */
+        /* MAIN CONTENT */
 
-.filters {
-    text-align: center;
-    margin-bottom: 35px;
-}
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 5%;
+        }
 
-.filters h2 {
-    font-size: 25px;
-    margin-bottom: 18px;
-}
 
-.filters button {
+        /* INTRODUCTION */
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 16px;
+        }
+
+
+        /* GALLERY FILTERS */
+
+        .filters {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .filters h2 {
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .filters button {
+            background-color: #70181d;
+            color: white;
+            border: 2px solid #70181d;
+            padding: 10px 17px;
+            border-radius: 25px;
+            margin: 5px;
+            font-family: Georgia, serif;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filters button:hover,
+        .filters button.active {
+            background-color: white;
+            color: #70181d;
+        }
+
+
+        /* GALLERY GRID */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+
+        /* GALLERY CARDS */
+
+        figure {
+            background-color: white;
+            padding: 13px;
+            margin: 0;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(112, 24, 29, 0.10);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        figure:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 7px 18px rgba(112, 24, 29, 0.15);
+        }
+
+        figure img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        figcaption {
+            text-align: center;
+            color: #70181d;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 12px 5px 5px;
+        }
+
+
+        /* HIDDEN GALLERY ITEMS */
+
+        figure.hidden {
+            display: none;
+        }
+
+
+        /* REQUEST A QUOTATION SECTION */
+
+        .quote-section {
+            text-align: center;
+            background-color: #f3dce2;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        .quote-section h2 {
+            font-size: 26px;
+        }
+
+        .quote-section p {
+            font-size: 15px;
+        }
+
+        .quote-button {
+            display: inline-block;
+            background-color: #70181d;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .quote-button:hover {
+            background-color: #92333d;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: #70181d;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 30px;
+        }
+
+        footer h2 {
+            font-size: 25px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 7px;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* TABLET RESPONSIVENESS */
+
+        @media (max-width: 850px) {
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+        }
+
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 550px) {
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .intro h1 {
+                font-size: 30px;
+            }
+
+            figure img {
+                height: 240px;
+            }
+
+        }
+
+        /* DARK MODE BUTTON */
+
+#theme-toggle {
     background-color: #70181d;
-    color: white;
-    border: 2px solid #70181d;
-    padding: 10px 17px;
+    color: #fdebf0;
+    border: 1px solid #70181d;
     border-radius: 25px;
-    margin: 5px;
+    padding: 9px 15px;
     font-family: Georgia, serif;
     font-size: 13px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.filters button:hover,
-.filters button.active {
-    background-color: white;
+#theme-toggle:hover {
+    opacity: 0.8;
+}
+
+
+/* DARK MODE COLOURS */
+
+body.dark-mode {
+    background-color: #70181d;
+    color: #fdebf0;
+}
+
+/* Header */
+
+body.dark-mode header {
+    background-color: #70181d;
+    color: #fdebf0;
+    border-bottom: 1px solid #fdebf0;
+}
+
+body.dark-mode header h2 {
+    color: #fdebf0;
+}
+
+/* Navigation */
+
+body.dark-mode nav a {
+    color: #fdebf0;
+}
+
+/* Main headings and text */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode figcaption {
+    color: #fdebf0;
+}
+
+/* Service and gallery cards */
+
+body.dark-mode .service-card,
+body.dark-mode figure,
+body.dark-mode .decor-card,
+body.dark-mode .decor-form {
+    background-color: #70181d;
+    color: #fdebf0;
+    border: 1px solid #fdebf0;
+}
+
+/* Images */
+
+body.dark-mode img {
+    border: 1px solid #fdebf0;
+}
+
+/* Buttons */
+
+body.dark-mode button {
+    background-color: #fdebf0;
+    color: #70181d;
+    border-color: #fdebf0;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .filters button.active {
+    background-color: #70181d;
+    color: #fdebf0;
+}
+
+/* Links and quotation buttons */
+
+body.dark-mode a {
+    color: #fdebf0;
+}
+
+body.dark-mode .quote-button,
+body.dark-mode .card-links a {
+    background-color: #fdebf0;
     color: #70181d;
 }
 
+/* Special sections */
 
-/* GALLERY GRID */
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+body.dark-mode .quote-section {
+    background-color: #70181d;
+    color: #fdebf0;
+    border: 1px solid #fdebf0;
 }
 
+/* Form fields */
 
-/* GALLERY CARDS */
-
-figure {
-    background-color: white;
-    padding: 13px;
-    margin: 0;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(112, 24, 29, 0.10);
-    transition: transform 0.3s, box-shadow 0.3s;
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #70181d;
+    color: #fdebf0;
+    border: 1px solid #fdebf0;
 }
 
-figure:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 7px 18px rgba(112, 24, 29, 0.15);
+/* Footer */
+
+body.dark-mode footer {
+    background-color: #70181d;
+    color: #fdebf0;
+    border-top: 1px solid #fdebf0;
 }
 
-figure img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
+body.dark-mode footer h2,
+body.dark-mode footer p,
+body.dark-mode footer a {
+    color: #fdebf0;
 }
 
-figcaption {
-    text-align: center;
+/* Dark mode toggle */
+
+body.dark-mode #theme-toggle {
+    background-color: #fdebf0;
     color: #70181d;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 12px 5px 5px;
+    border-color: #fdebf0;
 }
-
-
-/* HIDDEN GALLERY ITEMS */
-
-figure.hidden {
-    display: none;
-}
-
-
-/* REQUEST A QUOTATION SECTION */
-
-.quote-section {
-    text-align: center;
-    background-color: #f3dce2;
-    padding: 40px 20px;
-    border-radius: 15px;
-    margin-top: 50px;
-}
-
-.quote-section h2 {
-    font-size: 26px;
-}
-
-.quote-section p {
-    font-size: 15px;
-}
-
-.quote-button {
-    display: inline-block;
-    background-color: #70181d;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-top: 10px;
-    transition: 0.3s;
-}
-
-.quote-button:hover {
-    background-color: #92333d;
-}
-
-
-/* FOOTER */
-
-footer {
-    background-color: #70181d;
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
-    margin-top: 30px;
-}
-
-footer h2 {
-    font-size: 25px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 7px;
-    font-size: 14px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-
-/* TABLET RESPONSIVENESS */
-
-@media (max-width: 850px) {
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    header {
-        flex-direction: column;
-    }
-
-}
-
-
-/* MOBILE RESPONSIVENESS */
-
-@media (max-width: 550px) {
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    nav {
-        justify-content: center;
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    .intro h1 {
-        font-size: 30px;
-    }
-
-    figure img {
-        height: 240px;
-    }
-
-}
-
-</style>
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- HEADER AND NAVIGATION -->
+    <!-- HEADER AND NAVIGATION -->
 
-<header>
+    <header>
 
-    <h2>The Final Detail</h2>
+        <h2>The Final Detail</h2>
 
-    <nav>
+        <nav>
 
-        <a href="index.html">Home</a>
+            <a href="index.html">Home</a>
 
-        <a href="services.html">Services</a>
+            <a href="services.html">Services</a>
 
-        <a href="decor-options.html">Decor Options</a>
+            <a href="decor-options.html">Decor Options</a>
 
-        <a href="gallery.html" aria-current="page">Gallery</a>
+            <a href="gallery.html" aria-current="page">Gallery</a>
 
-        <a href="build-event.html">Build Your Event</a>
+            <a href="build-event.html">Build Your Event</a>
 
-        <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
+           <!-- <button id="theme-toggle" type="button">
+                🌙 Dark Mode
+            </button>-->
 
-    </nav>
+        </nav>
 
-</header>
+    </header> 
 
 
-<!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
 
-<main>
+    <main>
 
 
-<!-- INTRODUCTION -->
+        <!-- INTRODUCTION -->
 
-<section class="intro">
+        <section class="intro">
 
-    <h1>Our Event Gallery</h1>
+            <h1>Our Event Gallery</h1>
 
-    <p>
-        Every event tells a story. Explore the beautiful
-        celebrations and creative arrangements of
-        The Final Detail. From elegant bridal showers
-        to memorable birthdays, discover our event styles
-        and get inspired for your next special occasion.
-    </p>
+            <p>
+                Every event tells a story. Explore the beautiful
+                celebrations and creative arrangements of
+                The Final Detail. From elegant bridal showers
+                to memorable birthdays, discover our event styles
+                and get inspired for your next special occasion.
+            </p>
 
-</section>
+        </section>
 
 
 
-<!-- GALLERY FILTER BUTTONS -->
+        <!-- GALLERY FILTER BUTTONS -->
 
-<section class="filters">
+        <section class="filters">
 
-    <h2>Explore Our Events</h2>
+            <h2>Explore Our Events</h2>
 
-    <button class="active" data-filter="all">
-        All Events
-    </button>
+            <button class="active" data-filter="all">
+                All Events
+            </button>
 
-    <button data-filter="bridal-showers">
-        Bridal Showers
-    </button>
+            <button data-filter="bridal-showers">
+                Bridal Showers
+            </button>
 
-    <button data-filter="themed-parties">
-        Themed Parties
-    </button>
+            <button data-filter="themed-parties">
+                Themed Parties
+            </button>
 
-    <button data-filter="birthdays">
-        Birthdays
-    </button>
+            <button data-filter="birthdays">
+                Birthdays
+            </button>
 
-    <button data-filter="engagement-parties">
-        Engagement Parties
-    </button>
+            <button data-filter="engagement-parties">
+                Engagement Parties
+            </button>
 
-    <button data-filter="henna-nights">
-        Henna Nights
-    </button>
+            <button data-filter="henna-nights">
+                Henna Nights
+            </button>
 
-    <button data-filter="baby-showers">
-        Baby Showers
-    </button>
+            <button data-filter="baby-showers">
+                Baby Showers
+            </button>
 
-    <button data-filter="classy-events">
-        Classy Events
-    </button>
+            <button data-filter="classy-events">
+                Classy Events
+            </button>
 
-    <button data-filter="ramadan-gatherings">
-        Ramadan Gatherings
-    </button>
+            <button data-filter="ramadan-gatherings">
+                Ramadan Gatherings
+            </button>
 
-    <button data-filter="winter-outdoor-events">
-        Winter Outdoor Events
-    </button>
+            <button data-filter="winter-outdoor-events">
+                Winter Outdoor Events
+            </button>
 
-</section>
+        </section>
 
 
 
-<!-- EVENT PHOTOGRAPHS -->
+        <!-- EVENT PHOTOGRAPHS -->
 
-<section class="gallery-grid">
+        <section class="gallery-grid">
 
 
-    <!-- 1. BRIDAL SHOWERS -->
+            <!-- 1. BRIDAL SHOWERS -->
 
-    <figure data-category="bridal-showers">
+            <figure data-category="bridal-showers">
 
-        <img
-            src="images/bridal1.jpg"
-            alt="Elegant bridal shower with beautiful decorations"
-        >
+                <img src="images/bridal1.jpg" alt="Elegant bridal shower with beautiful decorations">
 
-        <figcaption>
-            Elegant Bridal Shower
-        </figcaption>
+                <figcaption>
+                    Elegant Bridal Shower
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 2. THEMED PARTIES -->
+            <!-- 2. THEMED PARTIES -->
 
-    <figure data-category="themed-parties">
+            <figure data-category="themed-parties">
 
-        <img
-            src="images/themed-party1.jpg"
-            alt="Creative themed party with customised decorations"
-        >
+                <img src="images/themed-party1.jpg" alt="Creative themed party with customised decorations">
 
-        <figcaption>
-            Customised Themed Party
-        </figcaption>
+                <figcaption>
+                    Customised Themed Party
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 3. BIRTHDAYS -->
+            <!-- 3. BIRTHDAYS -->
 
-    <figure data-category="birthdays">
+            <figure data-category="birthdays">
 
-        <img
-            src="images/birthday1.jpg"
-            alt="Beautiful birthday celebration and table setup"
-        >
+                <img src="images/birthday1.jpg" alt="Beautiful birthday celebration and table setup">
 
-        <figcaption>
-            Birthday Celebration
-        </figcaption>
+                <figcaption>
+                    Birthday Celebration
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 4. ENGAGEMENT PARTIES -->
+            <!-- 4. ENGAGEMENT PARTIES -->
 
-    <figure data-category="engagement-parties">
+            <figure data-category="engagement-parties">
 
-        <img
-            src="images/engagement1.jpg"
-            alt="Elegant engagement party decorations"
-        >
+                <img src="images/engagement1.jpg" alt="Elegant engagement party decorations">
 
-        <figcaption>
-            Engagement Celebration
-        </figcaption>
+                <figcaption>
+                    Engagement Celebration
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 5. HENNA NIGHTS -->
+            <!-- 5. HENNA NIGHTS -->
 
-    <figure data-category="henna-nights">
+            <figure data-category="henna-nights">
 
-        <img
-            src="images/henna1.jpg"
-            alt="Traditional henna night event decorations"
-        >
+                <img src="images/henna1.jpg" alt="Traditional henna night event decorations">
 
-        <figcaption>
-            Henna Night Celebration
-        </figcaption>
+                <figcaption>
+                    Henna Night Celebration
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 6. BABY SHOWERS -->
+            <!-- 6. BABY SHOWERS -->
 
-    <figure data-category="baby-showers">
+            <figure data-category="baby-showers">
 
-        <img
-            src="images/babyshower1.jpg"
-            alt="Pastel baby shower decorations"
-        >
+                <img src="images/babyshower1.jpg" alt="Pastel baby shower decorations">
 
-        <figcaption>
-            Baby Shower Celebration
-        </figcaption>
+                <figcaption>
+                    Baby Shower Celebration
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 7. CLASSY EVENTS -->
+            <!-- 7. CLASSY EVENTS -->
 
-    <figure data-category="classy-events">
+            <figure data-category="classy-events">
 
-        <img
-            src="images/classyevent1.jpg"
-            alt="Sophisticated classy event table styling"
-        >
+                <img src="images/classyevent1.jpg" alt="Sophisticated classy event table styling">
 
-        <figcaption>
-            Classy Event Setup
-        </figcaption>
+                <figcaption>
+                    Classy Event Setup
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 8. RAMADAN GATHERINGS -->
+            <!-- 8. RAMADAN GATHERINGS -->
 
-    <figure data-category="ramadan-gatherings">
+            <figure data-category="ramadan-gatherings">
 
-        <img
-            src="images/ramadan1.jpg"
-            alt="Elegant Ramadan gathering decorations"
-        >
+                <img src="images/ramadan1.jpg" alt="Elegant Ramadan gathering decorations">
 
-        <figcaption>
-            Ramadan Gathering
-        </figcaption>
+                <figcaption>
+                    Ramadan Gathering
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
 
-    <!-- 9. WINTER OUTDOOR EVENTS -->
+            <!-- 9. WINTER OUTDOOR EVENTS -->
 
-    <figure data-category="winter-outdoor-events">
+            <figure data-category="winter-outdoor-events">
 
-        <img
-            src="images/winter1.jpg"
-            alt="Beautiful winter outdoor event setup"
-        >
+                <img src="images/winter1.jpg" alt="Beautiful winter outdoor event setup">
 
-        <figcaption>
-            Winter Outdoor Event
-        </figcaption>
+                <figcaption>
+                    Winter Outdoor Event
+                </figcaption>
 
-    </figure>
+            </figure>
 
 
-</section>
+        </section>
 
 
 
-<!-- REQUEST A QUOTATION -->
+        <!-- REQUEST A QUOTATION -->
 
-<section class="quote-section">
+        <section class="quote-section">
 
-    <h2>Your Event Could Be Next</h2>
+            <h2>Your Event Could Be Next</h2>
 
-    <p>
-        Have an event in mind? Let us turn your ideas
-        into a beautiful celebration. Every detail
-        is designed with care.
-    </p>
+            <p>
+                Have an event in mind? Let us turn your ideas
+                into a beautiful celebration. Every detail
+                is designed with care.
+            </p>
 
-    <a href="build-event.html" class="quote-button">
-        Request a Quotation
-    </a>
+            <a href="build-event.html" class="quote-button">
+                Request a Quotation
+            </a>
 
-</section>
+        </section>
 
 
-</main>
+    </main>
 
 
 
-<!-- FOOTER -->
+    <!-- FOOTER -->
 
-<footer>
+    <footer>
 
-    <h2>The Final Detail</h2>
+        <h2>The Final Detail</h2>
 
-    <p>Where every detail matters.</p>
+        <p>Where every detail matters.</p>
 
-    <p>
-        Creating memorable occasions,
-        one detail at a time.
-    </p>
+        <p>
+            Creating memorable occasions,
+            one detail at a time.
+        </p>
 
-    <p>
+        <p>
 
-        <a href="index.html">Home</a>
+            <a href="index.html">Home</a>
 
-        <a href="services.html">Services</a>
+            <a href="services.html">Services</a>
 
-        <a href="decor-options.html">Decor Options</a>
+            <a href="decor-options.html">Decor Options</a>
 
-        <a href="gallery.html">Gallery</a>
+            <a href="gallery.html">Gallery</a>
 
-        <a href="contact.html">Contact Us</a>
+            <a href="contact.html">Contact Us</a>
 
-    </p>
+        </p>
 
-    <p>
-        &copy; 2026 The Final Detail.
-        All rights reserved.
-    </p>
+        <p>
+            &copy; 2026 The Final Detail.
+            All rights reserved.
+        </p>
 
-</footer>
+    </footer>
 
 
 
-<!-- JAVASCRIPT: GALLERY FILTERING -->
+    <!-- JAVASCRIPT: GALLERY FILTERING -->
 
-<script>
+    <script>
 
-const filterButtons = document.querySelectorAll(
-    ".filters button"
-);
+        const filterButtons = document.querySelectorAll(
+            ".filters button"
+        );
 
-const galleryItems = document.querySelectorAll(
-    ".gallery-grid figure"
-);
+        const galleryItems = document.querySelectorAll(
+            ".gallery-grid figure"
+        );
 
-filterButtons.forEach(button => {
+        filterButtons.forEach(button => {
 
-    button.addEventListener("click", function() {
+            button.addEventListener("click", function () {
 
-        const selectedCategory = this.dataset.filter;
+                const selectedCategory = this.dataset.filter;
 
-        // Remove active style from all buttons
+                // Remove active style from all buttons
 
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
+                filterButtons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
 
-        // Highlight selected button
+                // Highlight selected button
 
-        this.classList.add("active");
+                this.classList.add("active");
 
-        // Show or hide gallery photographs
+                // Show or hide gallery photographs
 
-        galleryItems.forEach(item => {
+                galleryItems.forEach(item => {
 
-            if (
-                selectedCategory === "all" ||
-                item.dataset.category === selectedCategory
-            ) {
+                    if (
+                        selectedCategory === "all" ||
+                        item.dataset.category === selectedCategory
+                    ) {
 
-                item.classList.remove("hidden");
+                        item.classList.remove("hidden");
 
-            } else {
+                    } else {
 
-                item.classList.add("hidden");
+                        item.classList.add("hidden");
 
-            }
+                    }
+
+                });
+
+            });
 
         });
 
-    });
-
-});
-
-</script>
-
+    </script>
 
 </body>
+
 </html>

@@ -37,3 +37,36 @@ checkButton.addEventListener("click", checkAvailability);
 checkDate.addEventListener("input", () => {
   result.textContent = "";
 });
+/*
+// DARK MODE FUNCTIONALITY
+
+const themeButton = document.getElementById("theme-toggle");
+
+// Check the saved theme when the page opens
+
+const savedTheme = localStorage.getItem("website-theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeButton.textContent = "☀️ Light Mode";
+}
+
+// Switch between light and dark mode
+
+themeButton.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("website-theme", "dark");
+        themeButton.textContent = "☀️ Light Mode";
+
+    } else {
+
+        localStorage.setItem("website-theme", "light");
+        themeButton.textContent = "🌙 Dark Mode";
+
+    }
+
+});*/
