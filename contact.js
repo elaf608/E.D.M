@@ -22,7 +22,6 @@ contactForm.addEventListener("input", () => {
 });
 
 submitButton.disabled = false;
-
 const messageField = document.querySelector("#message");
 const messageCount = document.querySelector("#message-count");
 
