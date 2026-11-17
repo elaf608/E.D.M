@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,7 @@
 </head>
 
 <body>
-   <header>
+    <header>
         <h2>The Final Detail</h2>
         <nav>
             <a href="index.html">Home</a>
@@ -17,10 +16,7 @@
             <a href="decor-options.html">Decor Options</a>
             <a href="gallery.html">Gallery</a>
             <a href="build-event.html" aria-current="page">Build Your Event</a>
-            <a href="contact.html">About & Contact</a>
-            <!--<button id="theme-toggle" type="button">
-                🌙 Dark Mode
-            </button>-->
+            <a href="contact.html">About &amp; Contact</a>
         </nav>
     </header>
 
@@ -31,9 +27,17 @@
         </section>
 
         <form class="build-form" id="build-form" method="post">
+            <div class="choose-decor">
+                <p>Choose at least one décor option before filling in your event details.</p>
+                <a class="btn" href="decor-options.html" id="choose-decor-link">
+                    Choose Décor Options
+                </a>
+                <p id="decor-selection-status" role="status"></p>
+            </div>
 
             <h3>Your Details</h3>
             <p id="decor-note"></p>
+
             <label for="name">Customer Name</label>
             <input type="text" id="name" name="name" required>
 
@@ -56,18 +60,32 @@
             <label for="number">Number of guests</label>
             <input type="number" id="number" name="number" min="1" max="500" required>
 
-            <h3>Optional Extras</h3>
+            <!-- Keep the selected décor available to the form and estimate script. -->
+            <div hidden>
+                <input type="checkbox" name="decor" value="backdrops-draping"
+                       data-label="Backdrops &amp; Draping">
+                <input type="checkbox" name="decor" value="dining-table"
+                       data-label="Dining Table Styling">
+                <input type="checkbox" name="decor" value="candy-station"
+                       data-label="Candy Station">
+                <input type="checkbox" name="decor" value="food-table"
+                       data-label="Food Table">
+                <input type="checkbox" name="decor" value="drinks-table"
+                       data-label="Drinks Table">
+            </div>
 
+            <h3>Optional Extras</h3>
             <div class="extras">
                 <label for="Cake">
                     <input type="checkbox" id="Cake" name="Cake" value="Cake"> Cake
                 </label>
                 <label for="Photography">
-                    <input type="checkbox" id="Photography" name="Photography" value="Photography"> Photography
+                    <input type="checkbox" id="Photography" name="Photography"
+                           value="Photography"> Photography
                 </label>
                 <label for="Extra-decorations">
-                    <input type="checkbox" id="Extra-decorations" name="Extra-decorations" value="Extra-decorations">
-                    Extra decorations
+                    <input type="checkbox" id="Extra-decorations" name="Extra-decorations"
+                           value="Extra-decorations"> Extra decorations
                 </label>
             </div>
 
@@ -86,13 +104,6 @@
             <label for="requests">Additional requests</label>
             <textarea id="requests" name="requests" rows="3"></textarea>
 
-            <!--<div class="form-buttons">
-        <button type="button">Request a Quotation</button>
-        <button type="reset">Reset</button>
-      </div>
-    </form>
-  </main>-->
-
             <div class="form-buttons">
                 <button type="button" id="estimate-button">Calculate Estimate</button>
                 <button type="submit">Request a Quotation</button>
@@ -101,38 +112,67 @@
 
             <div id="estimate-result" role="status"></div>
             <p id="form-feedback" role="status"></p>
+        </form>
+    </main>
 
-            <footer>
-                <h2>The Final Detail</h2>
-                <p>Where every detail matters.</p>
-                <p>Creating memorable occasions, one detail at a time.</p>
-                <p>
-                    <a href="index.html">Home</a>
-                    <a href="services.html">Services</a>
-                    <a href="decor-options.html">Decor Options</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="contact.html">About & Contact</a>
-                </p>
-                <p>&copy; 2026 The Final Detail. All rights reserved.</p>
-            </footer>
-            <script src="build-event.js" defer></script>
+    <footer>
+        <h2>The Final Detail</h2>
+        <p>Where every detail matters.</p>
+        <p>Creating memorable occasions, one detail at a time.</p>
+        <p>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="decor-options.html">Decor Options</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">About &amp; Contact</a>
+        </p>
+        <p>&copy; 2026 The Final Detail. All rights reserved.</p>
+    </footer>
 
-            <script>
-                const selectedDecor = new URLSearchParams(window.location.search).getAll("decor");
+    <script>
+        {
+            const form = document.querySelector("#build-form");
+            const decorLink = document.querySelector("#choose-decor-link");
+            const decorStatus = document.querySelector("#decor-selection-status");
+            const selectedDecor = new URLSearchParams(window.location.search).getAll("decor");
+            const decorFields = form.querySelectorAll('input[name="decor"]');
+            const selectedNames = [];
 
-                if (selectedDecor.length > 0) {
-                    const decorCheckboxes = document.querySelectorAll(
-                        'input[type="checkbox"][name="decor"]'
-                    );
+            for (const field of decorFields) {
+                const isSelected = selectedDecor.includes(field.value);
+                field.defaultChecked = isSelected;
+                field.checked = isSelected;
 
-                    for (const checkbox of decorCheckboxes) {
-                        checkbox.checked = selectedDecor.includes(checkbox.value);
-                    }
+                if (isSelected) {
+                    selectedNames.push(field.dataset.label);
                 }
-            </script>
-</body>
+            }
 
-</html>
-</body>
+            if (selectedNames.length > 0) {
+                decorStatus.textContent = `Selected décor: ${selectedNames.join(", ")}.`;
+            }
 
+            function requireDecor(event) {
+                if (selectedNames.length > 0) {
+                    return;
+                }
+
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                decorStatus.textContent =
+                    "Please select at least one décor option, then click Build My Event to return.";
+                decorLink.focus();
+            }
+
+            form.addEventListener("click", (event) => {
+                if (event.target.closest('#estimate-button, button[type="submit"]')) {
+                    requireDecor(event);
+                }
+            }, true);
+
+            form.addEventListener("submit", requireDecor, true);
+        }
+    </script>
+    <script src="build-event.js" defer></script>
+</body>
 </html>

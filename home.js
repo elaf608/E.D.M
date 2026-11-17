@@ -37,36 +37,30 @@ checkButton.addEventListener("click", checkAvailability);
 checkDate.addEventListener("input", () => {
   result.textContent = "";
 });
-/*
-// DARK MODE FUNCTIONALITY
 
-const themeButton = document.getElementById("theme-toggle");
+// Past Events carousel
+const photos = document.querySelectorAll("#past-events .featured figure");
+const controls = document.querySelector("#featured-controls");
 
-// Check the saved theme when the page opens
+if (photos.length > 1 && controls) {
+  const previous = document.querySelector("#featured-prev");
+  const next = document.querySelector("#featured-next");
+  const count = document.querySelector("#featured-count");
+  let currentPhoto = 0;
 
-const savedTheme = localStorage.getItem("website-theme");
+  function showPhoto(index) {
+    currentPhoto = (index + photos.length) % photos.length;
 
-if (savedTheme === "dark") {
-    document.body.classList.add("dark-mode");
-    themeButton.textContent = "☀️ Light Mode";
+    photos.forEach((photo, position) => {
+      photo.hidden = position !== currentPhoto;
+    });
+
+    count.textContent = `${currentPhoto + 1} of ${photos.length}`;
+  }
+
+  previous.addEventListener("click", () => showPhoto(currentPhoto - 1));
+  next.addEventListener("click", () => showPhoto(currentPhoto + 1));
+
+  showPhoto(0);
+  controls.hidden = false;
 }
-
-// Switch between light and dark mode
-
-themeButton.addEventListener("click", function () {
-
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-
-        localStorage.setItem("website-theme", "dark");
-        themeButton.textContent = "☀️ Light Mode";
-
-    } else {
-
-        localStorage.setItem("website-theme", "light");
-        themeButton.textContent = "🌙 Dark Mode";
-
-    }
-
-});*/

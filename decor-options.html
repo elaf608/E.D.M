@@ -1,96 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Décor Options | The Final Detail</title>
-    <link rel="stylesheet" href="decor-and-contact.css">
+  <link rel="stylesheet" href="decor-and-contact.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Décor Options | The Final Detail</title>
 </head>
 
 <body>
-    <header>
-        <h2>The Final Detail</h2>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="decor-options.html" aria-current="page">Décor Options</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="build-event.html">Build Your Event</a>
-            <a href="contact.html">About &amp; Contact</a>
-            <!--<button id="theme-toggle" type="button">
-                🌙 Dark Mode
-            </button>-->
-        </nav>
-    </header>
+  <header>
+    <p><strong>The Final Detail</strong></p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="decor-options.html" aria-current="page">Décor Options</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="build-event.html">Build Your Event</a>
+      <a href="contact.html">About &amp; Contact</a>
+    </nav>
+  </header>
 
+  <main>
+    <h1>Décor Options</h1>
+    <p>Choose the setups you’d like for your celebration.</p>
 
-    <main>
-        <section class="intro">
-            <h1>Décor Options</h1>
-            <p>Choose the setups you’d like for your celebration.</p>
-        </section>
+    <form action="build-event.html" method="get">
+      <fieldset>
+        <legend>Select your décor</legend>
 
+        <div class="decor-options">
+          <article class="decor-card">
+            <h2>Backdrops &amp; Draping</h2>
+            <p>Frame your space with a statement backdrop, fabric draping, or both.</p>
+            <input type="checkbox" id="backdrops-draping" name="decor"
+                   value="backdrops-draping">
+            <label for="backdrops-draping">Select Backdrops &amp; Draping</label>
+          </article>
 
-        <form action="build-event.html" method="get">
-            <fieldset>
-                <legend>Select your décor</legend>
+          <article class="decor-card">
+            <h2>Dining Table Styling</h2>
+            <p>Style your guest tables with place settings, candles, centrepieces, and table cards.</p>
+            <input type="checkbox" id="dining-table" name="decor"
+                   value="dining-table">
+            <label for="dining-table">Select Dining Table Styling</label>
+          </article>
 
-                <div class="decor-options">
-                    <article class="decor-card">
-                        <h2>Backdrops &amp; Draping</h2>
-                        <p>Frame your space with a statement backdrop, fabric draping, or both.</p>
-                        <input type="checkbox" id="backdrops-draping" name="decor" value="backdrops-draping">
-                        <label for="backdrops-draping">Select Backdrops &amp; Draping</label>
-                    </article>
+          <article class="decor-card">
+            <h2>Candy Station</h2>
+            <p>Create a sweet display with candy jars, trays, and signs that match your theme.</p>
+            <input type="checkbox" id="candy-station" name="decor"
+                   value="candy-station">
+            <label for="candy-station">Select Candy Station</label>
+          </article>
 
-                    <article class="decor-card">
-                        <h2>Dining Table Styling</h2>
-                        <p>Style your guest tables with place settings, candles, centrepieces, and table cards.</p>
-                        <input type="checkbox" id="dining-table" name="decor" value="dining-table">
-                        <label for="dining-table">Select Dining Table Styling</label>
-                    </article>
+          <article class="decor-card">
+            <h2>Food Table</h2>
+            <p>Style your food display with linens, serving stands, and decorative accents.</p>
+            <input type="checkbox" id="food-table" name="decor"
+                   value="food-table">
+            <label for="food-table">Select Food Table</label>
+          </article>
 
-                    <article class="decor-card">
-                        <h2>Candy Station</h2>
-                        <p>Create a sweet display with candy jars, trays, and signs that match your theme.</p>
-                        <input type="checkbox" id="candy-station" name="decor" value="candy-station">
-                        <label for="candy-station">Select Candy Station</label>
-                    </article>
+          <article class="decor-card">
+            <h2>Drinks Table</h2>
+            <p>Set up a dedicated drinks area with glassware and décor that matches your event.</p>
+            <input type="checkbox" id="drinks-table" name="decor"
+                   value="drinks-table">
+            <label for="drinks-table">Select Drinks Table</label>
+          </article>
+        </div>
+      </fieldset>
 
-                    <article class="decor-card">
-                        <h2>Food Table</h2>
-                        <p>Style your food display with linens, serving stands, and decorative accents.</p>
-                        <input type="checkbox" id="food-table" name="decor" value="food-table">
-                        <label for="food-table">Select Food Table</label>
-                    </article>
+      <button type="submit">Build My Event</button>
+    </form>
+  </main>
 
-                    <article class="decor-card">
-                        <h2>Drinks Table</h2>
-                        <p>Set up a dedicated drinks area with glassware and décor that matches your event.</p>
-                        <input type="checkbox" id="drinks-table" name="decor" value="drinks-table">
-                        <label for="drinks-table">Select Drinks Table</label>
-                    </article>
-                </div>
-            </fieldset>
-
-            <button type="submit">Build My Event</button>
-        </form>
-    </main>
-
-    <footer>
-        <h2>The Final Detail</h2>
-        <p>Where every detail matters.</p>
-        <p>Creating memorable occasions, one detail at a time.</p>
-        <p>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="decor-options.html">Decor Options</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">About & Contact</a>
-        </p>
-        <p>&copy; 2026 The Final Detail. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>The Final Detail</p>
+    <p>Where every detail matters.</p>
+  </footer>
 </body>
-
 </html>
