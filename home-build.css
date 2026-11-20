@@ -159,9 +159,10 @@ blockquote,
 
 .card img {
   width: 100%;
-  height: 190px;
+  height: 150px;
   object-fit: cover;
   border-radius: 10px;
+  display: block;
 }
 
 .card figcaption {
@@ -169,7 +170,6 @@ blockquote,
   font-weight: bold;
   text-align: center;
 }
-
 figure.card {
   margin: 0;
 }
@@ -453,3 +453,5 @@ body > footer a {
     text-align: center;
     margin-bottom: 1.5rem;
 }
+
+

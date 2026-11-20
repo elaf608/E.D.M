@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | The Final Detail</title>
   <link rel="stylesheet" href="home-build.css">
+  <link rel="stylesheet" href="dark.css">
 </head>
 
 <body>
@@ -18,6 +19,7 @@
       <a href="gallery.html">Gallery</a>
       <a href="build-event.html">Build Your Event</a>
       <a href="contact.html">About & Contact</a>
+      <button type="button" id="theme-toggle" class="theme-toggle"></button>
     </nav>
   </header>
 
@@ -28,94 +30,103 @@
       <a class="btn" href="build-event.html">Request a Quotation</a>
     </section>
     <section class="plan-by-occasion">
-  <h2>Plan by Occasion</h2>
+      <h2>Plan by Occasion</h2>
 
-  <form action="build-event.html" method="get">
-    <label for="home-event-type">What are you celebrating?</label>
-    <select id="home-event-type" name="event" required>
-      <option value="">Choose an occasion</option>
-      <option value="bridal-shower">Bridal shower</option>
-      <option value="themed-party">Themed party</option>
-      <option value="birthday">Birthday</option>
-      <option value="engagement-party">Engagement party</option>
-      <option value="henna-night">Henna night</option>
-      <option value="baby-shower">Baby shower</option>
-      <option value="elegant-celebration">Elegant celebration</option>
-      <option value="ramadan-gathering">Ramadan gathering</option>
-      <option value="outdoor-winter-event">Outdoor winter event</option>
-    </select>
+      <form action="build-event.html" method="get">
+        <label for="home-event-type">What are you celebrating?</label>
+        <select id="home-event-type" name="event" required>
+          <option value="">Choose an occasion</option>
+          <option value="bridal-shower">Bridal shower</option>
+          <option value="themed-party">Themed party</option>
+          <option value="birthday">Birthday</option>
+          <option value="engagement-party">Engagement party</option>
+          <option value="henna-night">Henna night</option>
+          <option value="baby-shower">Baby shower</option>
+          <option value="elegant-celebration">Elegant celebration</option>
+          <option value="ramadan-gathering">Ramadan gathering</option>
+          <option value="outdoor-winter-event">Outdoor winter event</option>
+        </select>
 
-    <button type="submit">Start Planning</button>
-  </form>
+        <button type="submit">Start Planning</button>
+      </form>
 
-  <p><a href="decor-options.html">Explore Décor Options</a></p>
-</section>
+      <p><a href="decor-options.html">Explore Décor Options</a></p>
+    </section>
 
     <section>
       <h2 class="section-title">Types of Events We Style</h2>
       <div class="services">
 
         <article class="card">
-          <img src="images/bridal1.jpg" alt="Bridal shower decoration">
+          <a href="services.html">
+            <img src="bs.jpeg" alt="Bridal shower decoration"></a>
           <h3>Bridal Showers</h3>
           <p>Celebrate the bride-to-be with beautiful and personalised arrangements.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/themed-party1.jpg" alt="Themed party decoration">
+          <a href="services.html">
+            <img src="3.jpeg" alt="Themed party decoration"></a>
           <h3>Themed Parties</h3>
           <p>Bring your imagination to life with customised themes and creative decorations.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/birthday1.jpg" alt="Birthday celebration">
+          <a href="services.html">
+            <img src="bd.jpeg" alt="Birthday celebration"></a>
           <h3>Birthdays</h3>
           <p>Make birthdays special with beautiful and memorable event setups.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/engagement1.jpg" alt="Engagement party decoration">
+          <a href="services.html">
+            <img src="eng.jpeg" alt="Engagement party decoration"></a>
           <h3>Engagement Parties</h3>
           <p>Celebrate a special beginning with elegant and personalised decorations.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/henna1.jpg" alt="Henna night decoration">
+          <a href="services.html">
+            <img src="images/henna1.jpg" alt="Henna night decoration"></a>
           <h3>Henna Nights</h3>
           <p>Beautiful traditional-inspired arrangements for a memorable celebration.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/babyshower1.jpg" alt="Baby shower decoration">
+          <a href="services.html">
+            <img src="images/babyshower1.jpg" alt="Baby shower decoration"></a>
           <h3>Baby Showers</h3>
           <p>Welcome a new arrival with sweet and personalised celebrations.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/classyevent1.jpg" alt="Classy event decoration">
+          <a href="services.html">
+            <img src="ce.jpeg" alt="Classy event decoration"></a>
           <h3>Classy Events</h3>
           <p>Sophisticated and timeless event styling for those who appreciate elegance.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/ramadan1.jpg" alt="Ramadan gathering decoration">
+          <a href="services.html">
+            <img src="ra.jpeg" alt="Ramadan gathering decoration"></a>
           <h3>Ramadan Gatherings</h3>
           <p>Beautiful and welcoming arrangements for special Ramadan gatherings.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
         <article class="card">
-          <img src="images/winter1.jpg" alt="Winter outdoor event decoration">
+          <a href="services.html">
+            <img src="images/winter1.jpg" alt="Winter outdoor event decoration"></a>
           <h3>Winter Outdoor Events</h3>
           <p>Enjoy the winter season with cosy and beautiful outdoor celebrations.</p>
-          <a href="services.html">Learn More</a>
+
         </article>
 
       </div>
@@ -139,7 +150,7 @@
       <div class="featured">
 
         <figure class="card">
-          <img src="images/bridal1.jpg" alt="Bridal shower table with white flowers">
+          <img src="bs.jpeg" alt="Bridal shower table with white flowers">
           <figcaption>Bridal Shower Bliss</figcaption>
         </figure>
 
@@ -149,12 +160,12 @@
         </figure>
 
         <figure class="card">
-          <img src="images/henna1.jpg" alt="Henna night decoration">
+          <img src="" alt="Henna night decoration">
           <figcaption>Henna Night</figcaption>
         </figure>
 
       </div>
-      
+
       <p class="center"><a class="btn" href="gallery.html">View Full Gallery</a></p>
     </section>
 
@@ -168,7 +179,7 @@
       </ul>
     </section>
 
-    <section class="reviews">
+    <!--<section class="reviews">
       <h2 class="section-title">Customer Reviews</h2>
       <blockquote>
         <p>"The setup was beautiful and every detail was perfect!"</p>
@@ -178,7 +189,7 @@
         <p>"Our henna night was unforgettable. Thank you!"</p>
         <footer>Customer 2</footer>
       </blockquote>
-    </section>
+    </section>-->
 
     <section class="quote-section">
       <h2>Ready to Plan Your Event?</h2>
@@ -205,6 +216,7 @@
   </footer>
 
   <script src="home.js" defer></script>
+  <script src="theme.js"></script>
 </body>
 
 </html>

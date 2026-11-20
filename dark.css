@@ -1,0 +1,85 @@
+.theme-toggle {
+  background: transparent;
+  color: #70181d;
+  border: 1px solid #70181d;
+  border-radius: 25px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+:root[data-theme="dark"] body {
+  background: #4a0e17;
+  color: #ffb6c9;
+}
+
+:root[data-theme="dark"] header,
+:root[data-theme="dark"] footer {
+  background: #3a0a12;
+  color: #ffb6c9;
+}
+
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] h2,
+:root[data-theme="dark"] h3,
+:root[data-theme="dark"] legend,
+:root[data-theme="dark"] summary,
+:root[data-theme="dark"] label,
+:root[data-theme="dark"] a,
+:root[data-theme="dark"] nav a,
+:root[data-theme="dark"] footer a {
+  color: #ffb6c9;
+}
+
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .decor-card,
+:root[data-theme="dark"] blockquote,
+:root[data-theme="dark"] .build-form,
+:root[data-theme="dark"] #contact-form,
+:root[data-theme="dark"] details,
+:root[data-theme="dark"] .booking {
+  background: #5e1823;
+  color: #ffb6c9;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+:root[data-theme="dark"] blockquote footer {
+  background: none;
+}
+
+:root[data-theme="dark"] .quote-section,
+:root[data-theme="dark"] #estimate-result {
+  background: #6b2230;
+  color: #ffb6c9;
+}
+
+:root[data-theme="dark"] .btn,
+:root[data-theme="dark"] button,
+:root[data-theme="dark"] .card-links a,
+:root[data-theme="dark"] .quote-button {
+  background: #ff8fab;
+  color: #4a0e17;
+}
+
+:root[data-theme="dark"] .btn:hover,
+:root[data-theme="dark"] button:hover,
+:root[data-theme="dark"] .card-links a:hover,
+:root[data-theme="dark"] .quote-button:hover {
+  background: #ffb3c6;
+}
+
+:root[data-theme="dark"] button[type="reset"],
+:root[data-theme="dark"] .theme-toggle {
+  background: transparent;
+  color: #ffb6c9;
+  border: 1px solid #ffb6c9;
+}
+
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] textarea {
+  background: #4a0e17;
+  color: #ffb6c9;
+  border: 1px solid #8a3345;
+}
